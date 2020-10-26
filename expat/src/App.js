@@ -1,12 +1,16 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
+import { Route } from 'react-router-dom'
+import LandingPage from './components/LandingPage'
+import FormikLoginForm from './components/LoginForm'
 
 function App() {
   return (
     <div className="App">
-      <h1>Expat Journal</h1>
+      <Route exact path="/" component={LandingPage} />
+      <Route exact path="/loginform" component={FormikLoginForm} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
