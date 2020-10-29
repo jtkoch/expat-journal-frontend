@@ -70,14 +70,14 @@ const FormikLoginForm = withFormik({
       .post("https://expat-journal-backend-jensen.herokuapp.com/api/auth/login", values) 
 
       .then(res => {
-        console.log(res);
-        localStorage.setItem("token", res.data.token);
-        resetForm();
-        setStatus(res.data);
-        // props.history.push(`/${values.type}mainui`); <--------- CHECK ON THIS
+        console.log(res)
+        localStorage.setItem("token", res.data.token)
+        resetForm()
+        setStatus(res.data)
+        props.history.push(`/${values}mainui`)
     })
   }
-})(LoginForm);
+})(LoginForm)
   
 
 export default FormikLoginForm
