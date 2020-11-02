@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { withFormik, Form, Field } from 'formik'
+import { Form, Field, withFormik } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
@@ -23,19 +23,11 @@ const LoginForm = ({ errors, touched, values, status }) => {
 
             <Form>
                 <h1>Please Sign In</h1>
-                <Field 
-                    name="name" 
-                    type="text" 
-                    value={values.name} 
-                    placeholder="username">
-                </Field>
-                <Field
-                    name="name"
-                    type="password"
-                    value={values.password}
-                    placeholder="password"
-                >
-                </Field>
+                <Field className="input" name="name" type="text" value={values.name} placeholder="username" ></Field>
+                {touched.name && errors.name && <p>{errors.name}</p>}
+
+                <Field className="input" name="password" type="password" value={values.password} placeholder="password" ></Field>
+                {touched.password && errors.password && <p>{errors.password}</p>}
 
                 <div>
                     <p>
